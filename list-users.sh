@@ -61,7 +61,29 @@ function list_users_with_read_access {
     fi
 }
 
+validate_args() {
+    if [[ "$#" -ne 2 ]]; then
+    echo "Error: Invalid Arguments"
+    echo
+    print_help
+    exit 1
+    fi
+}
+
+print_help() {
+  echo "Usage: ./list-users.sh <owner> <repo>"
+  echo
+  echo "Arguments:"
+  echo "  owner   GitHub username or organization name"
+  echo "  repo    GitHub repository name"
+  echo
+  echo "Environment:"
+  echo "  GITHUB_TOKEN   GitHub Personal Access Token"
+}
+
 # Main script
+
+validate_args "$@"
 
 echo "Listing users with read access to ${REPO_OWNER}/${REPO_NAME}..."
 list_users_with_read_access

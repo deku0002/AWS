@@ -1,5 +1,30 @@
 #!/bin/bash
 
+#################################################################
+# Script Name : list-users.sh
+# Description : Lists users with read access to a GitHub repository
+#               using the GitHub REST API. Supports organization
+#               repositories and includes API error handling.
+#
+# Author      : Devansh Sharma
+# GitHub      : https://github.com/deku0002/AWS
+#
+# Requirements:
+#   - Bash
+#   - curl
+#   - jq
+#   - GitHub Personal Access Token (GITHUB_TOKEN)
+#
+# Usage:
+#   ./list-users.sh <owner> <repo>
+#
+# Example:
+#   ./list-users.sh Devansh-Project test2
+#
+# Version     : 1.0.0
+# Last Updated: 2026-01-02
+#################################################################
+
 # GitHub API URL
 API_URL="https://api.github.com"
 
